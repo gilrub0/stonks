@@ -235,8 +235,8 @@ add_gap(top, bottom, dir, fillColor) =>
     array.push(gapFills, lf)
 
 // ========== Detect full gaps (bar-to-bar) ==========
-fullGapUp   = showGaps and na(high[1]) == false and low > high[1]
-fullGapDown = showGaps and na(low[1]) == false and high < low[1]
+fullGapUp   = showGaps and na(high[1]) == false and low > high[1] and not timeframe.isminutes
+fullGapDown = showGaps and na(low[1]) == false and high < low[1] and not timeframe.isminutes
 
 // Compute gap bounds (top above bottom)
 gapUpTop    = low
